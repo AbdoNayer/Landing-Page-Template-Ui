@@ -1,0 +1,149 @@
+@import "variables";
+@import "mixins";
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+// Local Style Page
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $bodyColor;
+  font-family: 'Poppins', sans-serif;
+}
+
+a, button, img, input, textarea, i{
+  @include transition
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: $mainTextColor;
+  &:hover, &:focus{
+    color: $mainColor
+  }
+}
+
+i{
+  vertical-align: middle;
+  color: $mainTextColor;
+  &:hover, &:focus{
+    color: $mainColor
+  }
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  margin: 10px 0;
+  color: $mainTextColor;
+}
+
+// Style Scroll Site
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: $mainColor;
+  border: 1px solid $mainColor
+}
+
+::-webkit-scrollbar-thumb {
+  background: $mainColor;
+}
+
+// Style Button Site
+
+button{
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  width: 150px;
+}
+
+.btnDefault{
+  background: $mainColor !important;
+  color: #fff !important;
+  border: 1px solid $mainColor !important;
+}
+
+.btnWhite{
+  background: #fff !important;
+  color: $mainColor !important;
+  border: 1px solid #fff !important;
+}
+
+.btnBorderMain{
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid $mainColor !important;
+}
+
+// selection
+
+::selection {
+  background: #212121;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #212121;
+  color: #fff;
+}
+
+/* Style Form Validation */
+
+input{
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid $inputColor;
+  color: $mainColor;
+  background-color: $inputColor;
+  border-radius: 5px;
+  height: 45px;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+textarea{
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid $inputColor;
+  color: $mainColor;
+  background-color: $inputColor;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+  min-height: 230px;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder{
+  color: $mainTextColor;
+  opacity: 1;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: $mainColor !important;
+}

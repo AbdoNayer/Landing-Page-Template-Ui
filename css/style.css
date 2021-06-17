@@ -1,40 +1,142 @@
 /* Colors Page */
-a, button, img {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #161616;
+  font-family: "Poppins", sans-serif;
+}
+
+a, button, img, input, textarea, i {
   transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
 
-* {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  outline: none !important;
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #BFBFBF;
 }
-
-body {
-  overflow-x: hidden;
-  background-color: #161616;
-}
-
 a:hover, a:focus {
   color: #EBAA14;
 }
 
-a, a:hover, a:focus {
-  text-decoration: none;
-  cursor: pointer;
-  color: #100F10;
-}
-
 i {
   vertical-align: middle;
+  color: #BFBFBF;
+}
+i:hover, i:focus {
+  color: #EBAA14;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 10px 0;
   color: #BFBFBF;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBAA14;
+  border: 1px solid #EBAA14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EBAA14;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  width: 150px;
+}
+
+.btnDefault {
+  background: #EBAA14 !important;
+  color: #fff !important;
+  border: 1px solid #EBAA14 !important;
+}
+
+.btnWhite {
+  background: #fff !important;
+  color: #EBAA14 !important;
+  border: 1px solid #fff !important;
+}
+
+.btnBorderMain {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #EBAA14 !important;
+}
+
+::selection {
+  background: #212121;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #212121;
+  color: #fff;
+}
+
+/* Style Form Validation */
+input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #1C1C1C;
+  color: #EBAA14;
+  background-color: #1C1C1C;
+  border-radius: 5px;
+  height: 45px;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #1C1C1C;
+  color: #EBAA14;
+  background-color: #1C1C1C;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+  min-height: 230px;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  color: #BFBFBF;
+  opacity: 1;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #EBAA14 !important;
+}
+
+/* Colors Page */
 
 /*# sourceMappingURL=style.css.map */
