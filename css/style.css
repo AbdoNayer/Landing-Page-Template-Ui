@@ -1,0 +1,40 @@
+/* Colors Page */
+a, button, img {
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #161616;
+}
+
+a:hover, a:focus {
+  color: #EBAA14;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: #100F10;
+}
+
+i {
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 10px 0;
+  color: #BFBFBF;
+}
+
+/*# sourceMappingURL=style.css.map */

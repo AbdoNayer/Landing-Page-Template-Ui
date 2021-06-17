@@ -1,0 +1,54 @@
+/* Colors Page */
+
+$bodyColor          : #161616;
+$mainTextColor      : #BFBFBF;
+$mainColor          : #EBAA14;
+$overColor          : #303030;
+$inputColor         : #1C1C1C;
+$whiteColor         : #FFF;
+
+// Placeholder Selector
+
+%transition{
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+// Local Style Page
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $bodyColor;
+}
+
+a, button, img{
+  @extend %transition;
+}
+
+a:hover, a:focus {
+  color: $mainColor
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: #100F10;
+}
+
+i{
+  vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  margin: 10px 0;
+  color: $mainTextColor;
+}
