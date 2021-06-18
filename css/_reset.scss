@@ -1,8 +1,20 @@
-@import "variables";
-@import "mixins";
-//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+// Colors Page
+
+$bodyColor          : #161616;
+$mainTextColor      : #BFBFBF;
+$mainColor          : #EBAA14;
+$overColor          : #303030;
+$inputColor         : #1C1C1C;
+$whiteColor         : #FFF;
+
+@mixin transition{
+  transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+// Font Import Cdn
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 // Local Style Page
@@ -22,7 +34,7 @@ body {
 }
 
 a, button, img, input, textarea, i{
-  @include transition
+  @include transition;
 }
 
 a{
@@ -47,11 +59,21 @@ h1,h2,h3,h4,h5,h6,p{
   color: $mainTextColor;
 }
 
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  display: inline-block;
+}
+
 // Style Scroll Site
 
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,15 +115,33 @@ button{
   border: 1px solid $mainColor !important;
 }
 
+// Colors
+
+.colorDefault{
+  color: $mainColor !important;
+}
+
+.colorBlack{
+  color: $overColor !important;
+}
+
+.colorText{
+  color: $mainTextColor !important;
+}
+
+.colorWight{
+  color: $whiteColor !important;
+}
+
 // selection
 
 ::selection {
-  background: #212121;
+  background: $mainColor;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #212121;
+  background: $mainColor;
   color: #fff;
 }
 
@@ -147,3 +187,93 @@ input:focus::-webkit-input-placeholder {
 input:focus {
   border-color: $mainColor !important;
 }
+
+// Flex Basic
+
+.flex{
+  display: flex;
+}
+
+.align-item-center{
+  align-items: center;
+}
+
+.align-content-center{
+  align-content: center;
+}
+
+.align-content-space{
+  align-content: space-between;
+}
+
+.flex-no-wrap{
+  flex-wrap: nowrap !important;
+}
+
+.row-reverse{
+  flex-direction: row-reverse;
+}
+
+.flex-start{
+  justify-content: flex-start;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+// Classes Used For Page
+
+.back{
+  transform: translateX(0px) !important;
+}
+
+.main-body{
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.overlay-fix{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 88;
+  @include transition;
+}
+
+.scroll-contain{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  contain: size style layout;
+}
+
+//  Slider Owl
+
+.owl-carousel{
+  display: block;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  direction: ltr;
+}
+
+// Loading Page
+
+.loader{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 99999;
+}
+
+
