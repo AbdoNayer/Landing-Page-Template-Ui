@@ -46,6 +46,10 @@ $(document).ready(function () {
 
     $(document).on("click", ".list-item ul li a, .scroll",function(e) {
 
+        $(".handle").removeClass("closed bgDefault");
+        $(".click-nav").removeClass("m-0");
+        $(".list-item").removeClass("back");
+
         $('html, body').animate({
 
             scrollTop: $('#' + $(this).data('value')).offset().top - 80

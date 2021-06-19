@@ -63,7 +63,7 @@
 
   // Col Row
 
-  .col-md-2{
+  .col-md-2, .col-md-6, .col-md-3, .col-md-4{
     flex: 100%;
     max-width: 100%;
   }
@@ -85,7 +85,7 @@
       transform: translateY(0%);
       left: 0;
       text-align: center;
-      z-index: 9;
+      z-index: 9111;
       width: 100%;
       .social-tool-tip {
         position: absolute;

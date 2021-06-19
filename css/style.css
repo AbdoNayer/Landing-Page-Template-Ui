@@ -563,6 +563,8 @@ header .list-item ul .active a:before {
 .click-nav .closed {
   transform: rotate(45deg);
   width: 40px;
+  position: relative;
+  top: -7px;
 }
 .click-nav .closed:nth-of-type(2) {
   transform: rotate(-45deg);
@@ -912,10 +914,19 @@ header .list-item ul .active a:before {
   background-color: #303030;
   text-align: center;
   padding: 20px 50px;
+  box-shadow: 0 0 0 0 #EBAA14 inset;
+  transition: 1s;
+}
+.services-section .block-item-service span {
   transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
 }
 .services-section .block-item-service i {
   font-size: 35px;
@@ -925,7 +936,10 @@ header .list-item ul .active a:before {
   font-size: 14px;
 }
 .services-section .block-item-service:hover {
-  background-color: #EBAA14;
+  box-shadow: 0 0 0 300px #EBAA14 inset;
+}
+.services-section .block-item-service:hover span {
+  background-color: #303030;
 }
 .services-section .block-item-service:hover i, .services-section .block-item-service:hover h5, .services-section .block-item-service:hover p {
   color: #FFF !important;
@@ -1082,7 +1096,7 @@ header .list-item ul .active a:before {
   top: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(50deg);
   left: 50%;
-  background-color: #161616;
+  background-color: #131313;
   width: 120px;
   height: 20px;
 }
@@ -1092,7 +1106,7 @@ header .list-item ul .active a:before {
   top: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(-30deg);
   left: 50%;
-  background-color: #161616;
+  background-color: #131313;
   width: 120px;
   height: 20px;
 }
@@ -1841,7 +1855,7 @@ input:focus, textarea:focus {
     display: flex;
   }
 
-  .col-md-2 {
+  .col-md-2, .col-md-6, .col-md-3, .col-md-4 {
     flex: 100%;
     max-width: 100%;
   }
@@ -1862,7 +1876,7 @@ input:focus, textarea:focus {
     transform: translateY(0%);
     left: 0;
     text-align: center;
-    z-index: 9;
+    z-index: 9111;
     width: 100%;
   }
   .container-section .follow-me .social-tool-tip {

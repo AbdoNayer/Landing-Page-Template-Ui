@@ -133,6 +133,8 @@ header{
   .closed {
     transform: rotate(45deg);
     width: 40px;
+    position: relative;
+    top: -7px;
   }
   .closed:nth-of-type(2) {
     transform: rotate(-45deg);
@@ -490,10 +492,19 @@ header{
 .services-section{
   background-color: $sectionColor;
   .block-item-service{
-    background-color: #303030;
+    background-color: $overColor;
     text-align: center;
     padding: 20px 50px;
-    @include transition;
+    box-shadow:0 0 0 0 $mainColor inset;
+    transition: 1s;
+    span{
+      @include transition;
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      border-radius: 50%;
+    }
     i{
       font-size: 35px;
       margin: 20px 0;
@@ -502,7 +513,13 @@ header{
       font-size: 14px;
     }
     &:hover{
-      background-color: $mainColor;
+      //background-color: $mainColor;
+      //box-shadow:0 0 0 100px $mainColor inset;
+      box-shadow:0 0 0 300px $mainColor inset;
+      //box-shadow: inset 0 0 0 2em $mainColor;
+    }
+    &:hover span{
+      background-color: $overColor;
     }
     &:hover i, &:hover h5, &:hover p{
       color: #FFF !important;
@@ -669,7 +686,7 @@ header{
           top: 50%;
           transform: translateY(-50%) translateX(-50%) rotate(50deg);
           left: 50%;
-          background-color: $bodyColor;
+          background-color: $sectionColor;
           width: 120px;
           height: 20px;
         }
@@ -679,7 +696,7 @@ header{
           top: 50%;
           transform: translateY(-50%) translateX(-50%) rotate(-30deg);
           left: 50%;
-          background-color: $bodyColor;
+          background-color: $sectionColor;
           width: 120px;
           height: 20px;
         }
