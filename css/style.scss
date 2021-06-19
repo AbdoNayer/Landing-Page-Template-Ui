@@ -52,59 +52,58 @@
 
 // List Style Item Header
 
-.list-item{
-  ul{
-    li{
-      position: relative;
-      &:before{
-        @include absoluteItem(50%, -50%, false);
-        @include transition;
-        content: "";
-        width: 20px;
-        height: 1px;
-        left: -17px;
-        background-color: $mainTextColor;
-      }
-      &:hover:before{
-        background-color: $mainColor;
-        left: 0;
-        width: 100%;
-        opacity: 0.2;
-      }
-      a{
+header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(22, 22, 22, 0.9);
+  .list-item{
+    ul{
+      li{
         position: relative;
-        overflow: hidden;
-        @include fontFamily(15px, Medium);
-        &:before {
-          content: attr(data-hover);
-          overflow: hidden;
-          position: absolute;
-          top: -1px;
-          left: 16px;
-          width: 0;
-          color: $mainColor;
-          white-space: nowrap;
-          transition: all 1.5s ease-in-out;
-          -o-transition: all 1.5s ease-in-out;
-          -moz-transition: all 1.5s ease-in-out;
-          -webkit-transition: all 1.5s ease-in-out;
+        &:before{
+          @include absoluteItem(50%, -50%, false);
+          @include transition;
+          content: "";
+          width: 20px;
+          height: 1px;
+          left: -17px;
+          background-color: $mainTextColor;
         }
-        &:hover {
-          color: transparent;
+        &:hover:before, &.active:before{
+          background-color: $mainColor;
+          left: 0;
+          width: 100%;
+          opacity: 0.2;
+        }
+        a{
+          position: relative;
+          overflow: hidden;
+          @include fontFamily(15px, Medium);
           &:before {
-            width: 100%;
+            content: attr(data-hover);
+            overflow: hidden;
+            position: absolute;
+            top: -1px;
+            left: 16px;
+            width: 0;
+            color: $mainColor;
+            white-space: nowrap;
+            transition: all 1.5s ease-in-out;
+            -o-transition: all 1.5s ease-in-out;
+            -moz-transition: all 1.5s ease-in-out;
+            -webkit-transition: all 1.5s ease-in-out;
+          }
+          &:hover {
+            color: transparent;
+            &:before {
+              width: 100%;
+            }
           }
         }
       }
-    }
-    .active{
-      &:after{
-        opacity: 1;
-        visibility: initial;
-        left: -17px;
-      }
-      a{
-        &:before {
+      .active{
+        a:before{
           width: 100%;
         }
       }
@@ -383,7 +382,7 @@
   width: 1em;
   height: 1em;
   position: relative;
-  background: #303030;
+  background: $overColor;
   border-radius: 50%;
   overflow: hidden;
   margin: auto;
@@ -404,16 +403,18 @@
       clip: rect(0 1em 1em .5em);
       transform: rotate(180deg);
       transition: 1.05s;
-      &:before {
+      &:before{
         content: "";
         position: absolute;
         width: 10px;
         height: 10px;
-        background-color: #FFF;
         border-radius: 50%;
-        top: 190px;
-        right: 88px;
         z-index: 99;
+      }
+      &:before {
+        background-color: #FFF;
+        top: 190px;
+        right: 89px;
       }
     }
   }

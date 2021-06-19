@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-x: hidden;
   background-color: #161616;
@@ -487,10 +483,16 @@ input:focus, textarea:focus {
     clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
   }
 }
-.list-item ul li {
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(22, 22, 22, 0.9);
+}
+header .list-item ul li {
   position: relative;
 }
-.list-item ul li:before {
+header .list-item ul li:before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -505,18 +507,18 @@ input:focus, textarea:focus {
   left: -17px;
   background-color: #BFBFBF;
 }
-.list-item ul li:hover:before {
+header .list-item ul li:hover:before, header .list-item ul li.active:before {
   background-color: #EBAA14;
   left: 0;
   width: 100%;
   opacity: 0.2;
 }
-.list-item ul li a {
+header .list-item ul li a {
   position: relative;
   overflow: hidden;
   font: 15px "Poppins", Medium;
 }
-.list-item ul li a:before {
+header .list-item ul li a:before {
   content: attr(data-hover);
   overflow: hidden;
   position: absolute;
@@ -530,18 +532,13 @@ input:focus, textarea:focus {
   -moz-transition: all 1.5s ease-in-out;
   -webkit-transition: all 1.5s ease-in-out;
 }
-.list-item ul li a:hover {
+header .list-item ul li a:hover {
   color: transparent;
 }
-.list-item ul li a:hover:before {
+header .list-item ul li a:hover:before {
   width: 100%;
 }
-.list-item ul .active:after {
-  opacity: 1;
-  visibility: initial;
-  left: -17px;
-}
-.list-item ul .active a:before {
+header .list-item ul .active a:before {
   width: 100%;
 }
 
@@ -836,11 +833,13 @@ input:focus, textarea:focus {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #FFF;
   border-radius: 50%;
-  top: 190px;
-  right: 88px;
   z-index: 99;
+}
+.circle_percent .circle_inner .round_per:before {
+  background-color: #FFF;
+  top: 190px;
+  right: 89px;
 }
 .circle_percent .circle_inbox {
   position: absolute;
@@ -1338,10 +1337,6 @@ footer ul li a:hover i {
   padding: 0;
   outline: none !important;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {

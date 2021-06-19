@@ -42,6 +42,26 @@ $(window).on('load', function () {
 
 $(document).ready(function () {
 
+    // Nav Scroll In Section
+
+    $(document).on("click", ".list-item ul li a, .scroll",function(e) {
+
+        $('html, body').animate({
+
+            scrollTop: $('#' + $(this).data('value')).offset().top - 80
+
+        }, 1000);
+        e.preventDefault();
+    });
+
+    // Active Item On Click In Nav
+
+    $(document).on("click", ".list-item ul li",function(e) {
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+    });
+
     // Click Open Nav Mobile
 
     $(document).on("click", ".click-nav",function() {
@@ -81,32 +101,40 @@ $(document).ready(function () {
         $('.slider-counter').text( carousel.relative(carousel.current()) + 1 + '/' + 0 + carousel.items().length);
     });
 
-    // Counter Section
+    // Counter Section Of Scroll
+    let a = 0;
+    $(window).scroll(function() {
 
-    $(".circle_percent").each(function() {
-        let $this = $(this),
-            $dataV = $this.data("percent"),
-            $dataDeg = $dataV * 3.6,
-            $round = $this.find(".round_per");
-        $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-        $this.append('<div class="circle_inbox"><span class="percent_text"></span></div>');
-        $this.prop('Counter', 0).animate({Counter: $dataV},
-            {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $this.find(".percent_text").text(Math.ceil(now)+"%");
+        let oTop = $('.count-section').offset().top - window.innerHeight;
+        if (a === 0 && $(window).scrollTop() > oTop) {
+            $(".circle_percent").each(function() {
+                let $this = $(this),
+                    $dataV = $this.data("percent"),
+                    $dataDeg = $dataV * 3.6,
+                    $round = $this.find(".round_per");
+                $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+                $this.append('<div class="circle_inbox"><span class="percent_text"></span></div>');
+                $this.prop('Counter', 0).animate({Counter: $dataV},
+                    {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $this.find(".percent_text").text(Math.ceil(now)+"%");
+                        }
+                    });
+                if($dataV >= 51){
+                    $round.css("transform", "rotate(" + 360 + "deg)");
+                    setTimeout(function(){
+                        $this.addClass("percent_more");
+                    },1000);
+                    setTimeout(function(){
+                        $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+                    },1000);
                 }
             });
-        if($dataV >= 51){
-            $round.css("transform", "rotate(" + 360 + "deg)");
-            setTimeout(function(){
-                $this.addClass("percent_more");
-            },1000);
-            setTimeout(function(){
-                $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-            },1000);
+            a = 1;
         }
+
     });
 
     // Owl Slider

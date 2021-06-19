@@ -6,7 +6,7 @@
     <title>Landing Page Template</title>
 
     <!-- favicon Page -->
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXuE3_V7twpTNJ1mnAQ9TlXXUfVGXCI_nagw&usqp=CAU">
+    <link rel="shortcut icon" href="https://img.pngio.com/yellow-circle-transparent-background-logo-image-free-logo-png-yellow-circle-png-2000_1902.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body id="home">
 
 <!-- Start Loading Page -->
 <div class="loader">
@@ -60,25 +60,25 @@
                 <div class="list-item">
                     <ul class="flex justify-content-space">
                         <li class="active">
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Home">Home</a>
+                            <a href="#home" data-value="home" class="pr-3 pl-3 flex-1" data-hover="Home">Home</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="About Us">About Us</a>
+                            <a href="#about" data-value="about" class="pr-3 pl-3 flex-1" data-hover="About Us">About Us</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Services">Services</a>
+                            <a href="#skills" data-value="skills" class="pr-3 pl-3 flex-1" data-hover="Skills">Skills</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Skills">Skills</a>
+                            <a href="#services" data-value="services" class="pr-3 pl-3 flex-1" data-hover="Services">Services</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Portfolio">Portfolio</a>
+                            <a href="#portfolio" data-value="portfolio" class="pr-3 pl-3 flex-1" data-hover="Portfolio">Portfolio</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Blog">Blog</a>
+                            <a href="#blog" data-value="blog" class="pr-3 pl-3 flex-1" data-hover="Blog">Blog</a>
                         </li>
                         <li>
-                            <a href="" class="pr-3 pl-3 flex-1" data-hover="Contact Me">Contact Me</a>
+                            <a href="#contact" data-value="contact" class="pr-3 pl-3 flex-1" data-hover="Contact Me">Contact Me</a>
                         </li>
                     </ul>
                 </div>
@@ -213,7 +213,7 @@
         <div class="slider-counter"></div>
     </div>
     <!-- Click Scroll Section -->
-    <a href="#About" class="scroll">
+    <a href="#about" data-value="about" class="scroll">
         <i class="icon-scroll colorWight"></i>
     </a>
     <!-- Section Follow Me -->
@@ -258,7 +258,7 @@
 <!-- End Slider Home -->
 
 <!-- Start About Me -->
-<div id="About" class="about-me position-relative overflow-hidden">
+<div id="about" class="about-me position-relative overflow-hidden">
     <img src="img/shape.png" alt="" class="fix-shape">
     <div class="container">
         <div class="row row-reverse">
@@ -290,8 +290,8 @@
 </div>
 <!-- End About Me-->
 
-<!-- Start Count Section -->
-<div class="count-section pb-5">
+<!-- Start Skills Section -->
+<div id="skills" class="count-section pb-5">
     <div class="container">
 
         <div class="row">
@@ -354,10 +354,10 @@
 
     </div>
 </div>
-<!-- End Count Section -->
+<!-- End Skills Section -->
 
 <!-- Start Services Section -->
-<div class="services-section pt-4 pb-5 mt-4 position-relative overflow-hidden">
+<div id="services" class="services-section pt-4 pb-5 mt-4 position-relative overflow-hidden">
     <div class="container">
 
         <div class="head-info">
@@ -407,7 +407,7 @@
 <!-- End Services Section -->
 
 <!-- Start Portfolio Section -->
-<div class="portfolio-section pt-4 pb-5 position-relative overflow-hidden">
+<div id="portfolio" class="portfolio-section pt-4 pb-5 position-relative overflow-hidden">
     <div class="container">
 
         <div class="head-info">
@@ -1166,7 +1166,7 @@
 <!-- End Available Section -->
 
 <!-- Start Blog Section -->
-<div class="blog-section position-relative pb-5 overflow-hidden">
+<div id="blog" class="blog-section position-relative pb-5 overflow-hidden">
     <div class="container">
 
         <div class="head-info">
@@ -1273,7 +1273,7 @@
 <!-- End Blog Section -->
 
 <!-- Start Contact Section -->
-<div class="contact-section position-relative pb-5 overflow-hidden">
+<div id="contact" class="contact-section position-relative pb-5 overflow-hidden">
     <div class="container">
 
         <div class="head-info">
