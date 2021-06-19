@@ -14,17 +14,16 @@ $(window).on('load', function () {
     $("#sliderHome img").height(Height);
 
     // ANIMATION
-
     Animate_box();
     $(document).scroll(function (){
         Animate_box();
     });
 
     function Animate_box() {
-        let scroll_var = $(this).scrollTop();
+        var scroll_var = $(this).scrollTop();
 
         $('.animate-box').each(function (){
-            let val_one = $(this).offset().top - $(window).height() + 50;
+            var val_one = $(this).offset().top - $(window).height() + 80;
 
             if (scroll_var > val_one){
                 if($(this).hasClass('left-in')) {
@@ -72,6 +71,7 @@ $(document).ready(function () {
         lastScrollTop = st;
     });
 
+    // Count Slider Dots
 
     $('.sliderHome').on('initialized.owl.carousel changed.owl.carousel', function(e) {
         if (!e.namespace)  {
@@ -79,11 +79,67 @@ $(document).ready(function () {
         }
         let carousel = e.relatedTarget;
         $('.slider-counter').text( carousel.relative(carousel.current()) + 1 + '/' + 0 + carousel.items().length);
-    })
+    });
+
+    // Counter Section
+
+    $(".circle_percent").each(function() {
+        let $this = $(this),
+            $dataV = $this.data("percent"),
+            $dataDeg = $dataV * 3.6,
+            $round = $this.find(".round_per");
+        $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+        $this.append('<div class="circle_inbox"><span class="percent_text"></span></div>');
+        $this.prop('Counter', 0).animate({Counter: $dataV},
+            {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $this.find(".percent_text").text(Math.ceil(now)+"%");
+                }
+            });
+        if($dataV >= 51){
+            $round.css("transform", "rotate(" + 360 + "deg)");
+            setTimeout(function(){
+                $this.addClass("percent_more");
+            },1000);
+            setTimeout(function(){
+                $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+            },1000);
+        }
+    });
 
     // Owl Slider
 
     $('#sliderHome').owlCarousel({
+        loop:true,
+        margin:0,
+        center:true,
+        autoplay:true,
+        autoplayTimeout: 7000,
+        smartSpeed: 1000,
+        animateOut: 'fadeOut',
+        dragEndSpeed: 7000,
+        pagination : false,
+        nav:true,
+        navText: [
+            '<i class="icon-arrow-left"></i>',
+            '<i class="icon-arrow-right"></i>'
+        ],
+        responsive:{
+            0:{
+                items:1
+            },
+            900:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
+    $('#sliderClient').owlCarousel({
         loop:true,
         margin:0,
         center:true,

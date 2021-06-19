@@ -4,7 +4,14 @@
 
 @media screen and (max-width: 990px){
 
+  // None For Mobile
+
+  .owl-dots, .owl-nav, .scroll, .href-btn a:last-child, .slider-counter, .pos-img{
+    display: none !important;
+  }
+
   // List Style Item Header
+
   .list-item {
     position: fixed;
     top: 0;
@@ -43,35 +50,33 @@
   }
 
   // Animation Text
+
   .anime-text {
     z-index: 998;
   }
 
   // Style Click Nav
+
   .click-nav {
     display: flex;
   }
 
   // Col Row
+
   .col-md-2{
     flex: 100%;
     max-width: 100%;
   }
 
   // Slider Home
+
   .container-section {
     padding: 0;
     .overlay-fix{
       padding: 0;
-      .href-btn a:last-child{
-        display: none;
-      }
       .over-info h1, .over-info h2 {
         font-size: 24px;
       }
-    }
-    .owl-dots{
-      display: none;
     }
     .follow-me {
       position: fixed;
@@ -96,6 +101,8 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
+        width: 95%;
+        border-radius: 5px;
         &:before{
           content: "";
           position: absolute;
@@ -117,7 +124,7 @@
           justify-content: center;
           background-color: $mainColor;
           border-radius: 50%;
-          margin: 0px 10px;
+          margin: 0 10px;
           &:before, &:after{
             display: none;
           }
@@ -149,12 +156,10 @@
         display: none;
       }
     }
-    .scroll{
-      display: none;
-    }
   }
 
   // About Me
+
   .about-me{
     padding: 60px 0;
     .fix-shape {
@@ -179,11 +184,64 @@
     }
   }
 
+  // Style Tabs
 
-}
+  .nav-tabs {
+    .nav-item {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .nav-link {
+      &:after{
+        display: none;
+      }
+      &:before{
+        right: 0;
+        margin: auto;
+      }
+      &:hover:before, &.active:before {
+        width: 60px;
+      }
+    }
+  }
 
-@media screen and (max-width: 768px){
+  // Style Available
 
-  // List Style Item Header
+  .available-section{
+    .info-available{
+      padding: 0 10px;
+    }
+    .flex{
+      flex-direction: column;
+    }
+  }
+
+  // Style Client
+
+  .slider-client{
+    .info-client{
+      padding: 0 10px;
+      .quote-fix {
+        i{
+          font-size: 50px;
+        }
+      }
+    }
+    .owl-nav{
+      display: none !important;
+    }
+  }
+
+  // Style Contact
+
+  .contact-section{
+    .call-info{
+      flex-wrap: wrap;
+      flex-direction: column;
+      &:before{
+        display: none;
+      }
+    }
+  }
 
 }

@@ -1,10 +1,14 @@
 // Colors Page
+
 $bodyColor          : #161616;
 $mainTextColor      : #BFBFBF;
 $mainColor          : #EBAA14;
 $overColor          : #303030;
+$sectionColor       : #131313;
 $inputColor         : #1C1C1C;
 $whiteColor         : #FFF;
+
+// Mixin
 
 @mixin transition{
   transition: all 0.4s ease-in-out;
@@ -28,14 +32,6 @@ $whiteColor         : #FFF;
   }
 }
 
-@mixin shapeItem($color, $left){
-  content: "";
-  width: 20px;
-  height: 1px;
-  left: $left;
-  background-color: $color;
-}
-
 @mixin scrollContain{
   overflow-x: hidden;
   overflow-y: scroll;
@@ -45,9 +41,11 @@ $whiteColor         : #FFF;
 }
 
 // Font Import Cdn
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 // Local Style Page
+
 * {
   border: 0;
   margin: 0;
@@ -103,6 +101,7 @@ li{
 }
 
 // Style Scroll Site
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -118,6 +117,7 @@ li{
 }
 
 // Style Button Site
+
 button{
   background-color: transparent;
   border: 0;
@@ -167,9 +167,14 @@ button{
     opacity: 1;
     visibility: initial;
   }
+  &:hover{
+    background-color: transparent !important;
+    color: #FFF !important;
+  }
 }
 
 // Classes Colors
+
 .colorDefault{
   color: $mainColor !important;
 }
@@ -191,6 +196,7 @@ button{
 }
 
 // selection
+
 ::selection {
   background: $mainColor;
   color: #fff;
@@ -201,7 +207,8 @@ button{
   color: #fff;
 }
 
-/* Style Form Validation */
+// Style Form Validation
+
 input{
   width: 100%;
   padding: 10px 20px;
@@ -223,7 +230,7 @@ textarea{
   border-radius: 5px;
   font-size: 14px;
   resize: none;
-  min-height: 230px;
+  min-height: 210px;
 }
 
 ::-webkit-input-placeholder,
@@ -234,16 +241,18 @@ textarea{
   opacity: 1;
 }
 
-input:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder{
   opacity: 0;
   transition: 0.3s;
 }
 
-input:focus {
+input:focus, textarea:focus {
   border-color: $mainColor !important;
 }
 
 // Flex Basic
+
 .flex{
   display: flex;
 }
@@ -285,6 +294,7 @@ input:focus {
 }
 
 // Classes Used For Page
+
 .back{
   transform: translateX(0px) !important;
 }
@@ -308,7 +318,16 @@ input:focus {
   opacity: 0 !important;
 }
 
+.overflow-hidden{
+  overflow: hidden !important;
+}
+
+.font-Italic{
+  font-style: italic;
+}
+
 //  Slider Owl
+
 .owl-carousel{
   display: block;
   width: 100%;
@@ -321,6 +340,7 @@ input:focus {
 }
 
 // Animation
+
 .animate-box {
   position: relative;
   opacity: 0;
@@ -340,6 +360,21 @@ input:focus {
   animation-delay: 0.3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft
 }
 
 @-webkit-keyframes fadeInUp {
@@ -366,11 +401,6 @@ input:focus {
     -webkit-transform: none;
     transform: none
   }
-}
-
-.fadeInUp, .fadeInLeft, .fadeInRight {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp
 }
 
 @-webkit-keyframes fadeInLeft {
@@ -442,6 +472,52 @@ input:focus {
   justify-content: center;
   background-color: #fff;
   z-index: 99999;
+  .loading{
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: rotate 3s linear infinite;
+    span{
+      width: 32px;
+      height: 32px;
+      background-color: red;
+      margin: 4px;
+      animation: scale 1.5s linear infinite;
+      &:nth-child(1){
+        border-radius: 50% 50% 0 50%;
+        background-color: $mainColor;
+        transform-origin: bottom right;
+      }
+      &:nth-child(2){
+        border-radius: 50% 50% 50% 0;
+        background-color: $bodyColor;
+        transform-origin: bottom left;
+        animation-delay: .5s;
+      }
+      &:nth-child(3){
+        border-radius: 50% 0 50% 50%;
+        background-color: $mainTextColor;
+        transform-origin: top right;
+        animation-delay: 1.5s;
+      }
+      &:nth-child(4){
+        border-radius: 0 50% 50% 50%;
+        background-color: #f5cd79;
+        transform-origin: top left;
+        animation-delay: 1s;
+      }
+    }
+  }
 }
 
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
 
+@keyframes scale{
+  50%{
+    transform: scale(1.3);
+  }
+}
